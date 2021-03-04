@@ -4,24 +4,24 @@ import java.util.List;
 
 public class A {
    Node m1(List<Node> nodes, String p) {
-      // TODO: Your answer
-      // other implementation
+	  extractedMethod(nodes, p);
       return null;
    }
 
    Edge m2(List<Edge> edgeList, String p) {
-      // TODO: Your answer
-      // other implementation
+      extractedMethod(edgeList, p);
       return null;
    }
 
-   // TODO: Your answer
-   // ? extractedMethod(?) {
-   //
-   // }
+    <T extends Base> void extractedMethod(List<T> list, String p) {
+    	for (T item : list) {
+			if (item.contains(p))
+				System.out.println(item);
+    	}
+    }
 }
 
-class Node {
+class Base {
    String name;
 
    public boolean contains(String p) {
@@ -29,10 +29,6 @@ class Node {
    }
 }
 
-class Edge {
-   String name;
+class Edge extends Base {}
 
-   public boolean contains(String p) {
-       return name.contains(p);
-   }
-}
+class Node extends Base {}
